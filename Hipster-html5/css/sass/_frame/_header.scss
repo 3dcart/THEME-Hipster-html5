@@ -1,0 +1,61 @@
+header {
+	height: 180px;
+	
+	padding-top: 20px;
+	padding-bottom: 20px;
+	
+	@media(max-width: 767px) {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		height: auto;
+	}
+}
+.header-left {
+	height: 140px;
+	max-height: 100%;
+	@include mob-block;
+
+	.logo {
+		position: relative;
+		height: 100%;
+		min-width: 200px;
+		max-width: 100%;
+		overflow: hidden;
+		line-height: 1.2;
+	
+		img {
+			position: absolute;
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 100%;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+	}
+	@media(max-width: 767px) {
+		height: auto;
+		
+		.logo {	
+			text-align: center;	
+			padding-top: 10px;
+			padding-bottom: 10px;
+			
+			img {
+				position: static;
+				right: 0;
+			}
+		}
+	}
+}
+.header-right {
+	@include hidden-mob;
+}
+.cart-area {
+	font-size: 16px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	@include hidden-mob;
+}

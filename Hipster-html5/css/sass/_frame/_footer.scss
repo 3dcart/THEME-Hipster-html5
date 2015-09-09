@@ -1,0 +1,137 @@
+.copyright {  }
+.copyright, .copyright a {
+    font-weight: normal;
+    font-family: $primary-font;
+    text-transform: none;
+    color: $default-color;
+    font-size: $normal-font;
+    line-height: 20px;
+    padding: 15px 0;
+}
+.global-banners {
+    position: relative;
+    padding: 5px 0px;
+    color: $default-color;
+}
+
+/*
+footer
+-----------*/
+footer {
+	margin-top: 2px;
+	padding-bottom: 20px;
+
+	.m-container {
+		padding-top: 20px;
+		@include border-top;
+		
+		.footer-left {
+			@include inline(left);
+			max-width: 60%;
+		}
+		.footer-right {
+			@include inline(right);
+			max-width: 40%;
+		}
+		
+		// Global footer
+		.globalFooter {
+			float: right;
+			margin-top: 20px;
+			max-width: 100%;
+			overflow: hidden;
+			
+			img {
+				max-width: 100%;
+			}
+		}
+		
+		// Copyright text
+		.copyright {
+			font-size: 12px;
+			text-align: right;
+		}
+		
+		@media(max-width: 767px) {
+			padding-left: 0;
+			padding-right: 0;
+			
+			.footer-left,
+			.footer-right {
+				@include block;
+				width: 100%;
+				max-width: 100%;
+			}
+			.footer-right {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+			
+			.globalFooter {
+				@include block;
+			}
+			.copyright {
+				text-align: center;
+			}
+		}
+	}
+}
+/*
+Extra pages
+----------------*/
+.extra-pages {
+
+	& ul{
+		@include clearfix;
+		@include list-inline;
+		
+		& > li {
+			margin-right: 10px;
+			& > a {
+				color: $default-color;
+				text-decoration: none;
+				
+				&:hover {
+					color: $primary-color;
+				}
+			}
+		}
+		@media(max-width: 767px) {
+
+			display: none;
+
+			& > li {
+				display: block;
+				margin-right: 0;
+				margin-bottom: 10px;
+				width: 100%;
+				text-align: center;
+			}
+		}
+	} 
+	
+	.quick-links-btn {
+		
+		color: #fff;
+		background: $primary-color;
+		text-align: center;
+		text-transform: uppercase;
+		cursor: pointer;
+		padding: 10px;
+		font-weight: bold;
+		margin-bottom: 10px;
+		display: none;
+		
+		&:before {
+			content:"+";
+			margin-right: 5px;
+		}
+		&.open:before {
+			content:"\2013";
+		}
+		
+		@media(max-width: 767px) {
+			display: block;
+		}
+	}
+}
